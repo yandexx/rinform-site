@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Русский Информ</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      padding-top: 70px; /* 60px to make the container go all the way to the bottom of the topbar */
+      position: relative;
+    }
+    .featured-game {
+      /*border: 1px solid rgb(0, 109, 204);*/
+      background-color: rgba(255,196,13, 0.2);
+      /*border-radius: 4px;*/
+      /*box-shadow: 0 1px 3px rgba(0,0,0,0.055);*/
+    }
+  </style>
+  <script src="js/jquery-min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+  // $('#navbar').scrollspy({offset: 70});
+  // window.addEventListener("hashchange", function() { scrollBy(0, -70) })
+
+  $('body').scrollspy({ target: '#navbar' })
+  </script>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="60">
+  
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topnavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Русский Информ</a>
+      </div>
+      <div class="collapse navbar-collapse" id="topnavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#about">О проекте</a></li>
+          <li><a href="#games">Игры</a></li>
+          <li><a href="#develop">Разработчику</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- <div data-spy="scroll" class="container"> -->
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Русский Информ</h1>
+      <p>Платформа для написания текстовых игр с парсерным вводом</p>
+    </div>
+
+    <div class="page-header" id="about">
+      <h1>О проекте <small>Что это такое?</small></h1>
+    </div>
+    <p>Русский Информ (RInform) — это перевод стандартной библиотеки популярной на западе системы <a href="http://www.inform-fiction.org/inform6.html">Inform 6</a>.</p>
+
+    <div class="page-header" id="games">
+      <h1>Игры <small>Готовые творения на Информе</small></h1>
+    </div>
+    <p>Готовая игра на Информе — это скомпилированный платформонезависимый файл с расширением <code>.z5</code>, <code>.z8</code> или <code>.zblorb</code>. Чтобы запустить игру, нужно открыть её при помощи одной из программ-интерпретаторов, на выбор:</p>
+    <ul>
+      <li><a href="http://www.davidkinder.co.uk/frotz.html">Windows Frotz</a> для Windows.</li>
+      <li><a href="https://github.com/garglk/garglk">Gargoyle</a> — кроссплатформенный, ориентирован на типографику.</li>
+      <li><a href="https://iplayif.com/">Parchment</a> — написан на HTML5, работает прямо в браузере.</li>
+      <li><a href="https://www.logicalshift.co.uk/unix/zoom/">Zoom</a> — для OS X и *nix систем.</li>
+    </ul>
+    <hr>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="thumbnail featured-game">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/photopia/photopia.jpg" class="img-rounded" alt="" width="120px"></p>
+          <div class="caption">
+            <h4>Фотопия <small>(2013)</small></h4>
+            <p>Перевод <em>Photopia</em> (1998).<br>
+              Автор перевода: Вячеслав Добранов.
+            </p>
+            <p><a href="http://rinform.stormway.ru/games/photopia/photopia.html" class="btn btn-primary" target="_blank"> Открыть</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/kniga/kniga.jpg" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Книга судьбы <small>(2012)</small></h4>
+            <p>Текстовая игра на конкурс ЗОК '12.<br>
+              Автор: Вета.
+            </p>
+            <p><a href="http://rinform.stormway.ru/games/kniga/kniga.html" class="btn btn-primary" target="_blank">Открыть</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/bluechairs/bluechairs.jpg" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Синие стулья <small>(2011)</small></h4>
+            <p>Перевод <em>Blue Chairs</em> (2004).<br>
+              Автор перевода: Вячеслав Добранов.
+            </p>
+            <p><a href="http://rinform.stormway.ru/games/bluechairs/bluechairs.html" class="btn btn-primary" target="_blank"> Открыть</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/morning/morning.jpg" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Субботнее утро <small>(2010)</small></h4>
+            <p>Фанфик по фильмам Джорджа Ромеро.<br>Автор: Сетке.</p>
+            <p><a href="http://rinform.stormway.ru/games/morning/morning.html" class="btn btn-primary" target="_blank"> Открыть</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/vespers/vespers.jpg" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Вечерня <small>(2010)</small></h4>
+            <p>Перевод <em>Vespers</em> (2005).<br>Автор перевода: Александр Мосьпан.</p>
+            <p><a href="http://rinform.stormway.ru/games/vespers/vespers.html" class="btn btn-primary" target="_blank"> Открыть</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/roboto/roboto.jpg" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Робото <small>(2010)</small></h4>
+            <p>Игра, написанная за один день на конкурс «Вжж!»<br>Автор: Всеволод Зубарев.</p>
+            <p><a href="http://rinform.stormway.ru/games/roboto/roboto.html" class="btn btn-primary" target="_blank"> Открыть</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/SpiderAndWeb/spiderandweb.jpg" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Spider and Web <small> (2009)</small></h4>
+            <p>Перевод одноимённой игры (1998).<br>
+              Автор перевода: Всеволод Зубарев.
+            </p>
+            <p><a href="http://rinform.stormway.ru/games/SpiderAndWeb/SpiderAndWeb.html" class="btn btn-primary" target="_blank"> Открыть</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/Metamorphoses/metamorphoses.jpg" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Метаморфозы <small> (2008)</small></h4>
+            <p>Перевод <em>Metamorphoses</em> (2000).<br>
+              Автор перевода: Всеволод Зубарев.
+            </p>
+            <p><a href="http://rinform.stormway.ru/games/Metamorphoses/metamorphoses.html" class="btn btn-primary" target="_blank"> Открыть</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/AllRoads/allroads.jpg" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Все пути <small> (2007)</small></h4>
+            <p>Перевод <em>All Roads</em> (2001).<br>
+              Автор перевода: Всеволод Зубарев.
+            </p>
+            <p><a href="http://rinform.stormway.ru/games/AllRoads/allroads.html" class="btn btn-primary" target="_blank"> Открыть</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <p class="text-center"><img src="http://rinform.stormway.ru/games/Adventure/adventure.jpg" width="120px" height="120px" class="img-rounded" alt=""></p>
+          <div class="caption">
+            <h4>Приключение <small> (2004)</small></h4>
+            <p>Перевод <em>Adventure</em> (1976).<br>
+              Автор перевода: Денис Гаев.
+            </p>
+            <p><a href="http://rinform.stormway.ru/games/Adventure/Adventure.html" class="btn btn-primary" target="_blank">Открыть</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-header" id="develop">
+      <h1>Разработчику <small>Документация, компилятор и утилиты</small></h1>
+    </div>
+    <h2>Библиотека</h2>
+    <p>Для разработки можно скачать рекомендуемую <a href="http://rinform.stormway.ru/files/RInform-full.zip">сборку</a> (обновлена <strong>7 ноября 2017</strong>), которая включает в себя компилятор (под Windows), библиотеку, демонстрационные игры и имеющуюся документацию.</p>
+    <p>Самая свежая версия библиотеки всегда доступна на репозитарии на BitBucket: <a href="https://bitbucket.org/yandexx/rinform" >https://bitbucket.org/yandexx/rinform</a>. Патчи и баг-репорты сильно приветствуются.</p>
+
+    <h2>Документация</h2>
+    <h3>На русском языке</h3>
+    <ul>
+      <li><a href="tutor/">Введение в Информ</a> — рекомендуется для новичков. Перевод <em>The Inform Beginner's Guide</em> с учётом особенностей русской версии платформы (готова 1 игра из 3).</li>
+    </ul>
+    <h3>На английском языке</h3>
+    <ul>
+      <li><a href="docs/IBG.pdf">The Inform Beginner's Guide</a> — рекомендуется для новичков.</li>
+      <li><a href="docs/DM4.pdf">The Inform Designer's Manual</a> — строгая и полная инструкция от автора платформы.</li>
+    </ul>
+    
+    <h2>Обратная связь</h2>
+    <p>По всем вопросам можно смело писать письма на <a href="mailto:yandexx@gmail.com">yandexx@gmail.com</a> или оставлять посты в разделе на форуме <a href="http://forum.ifiction.ru/viewforum.php?id=11" target="_blank">ifiction.ru</a>.</p>
+
+
+
+    <hr>
+    <footer class="footer">
+    <p>Всеволод Зубарев (yandexx, y4n), Ugo, cheshire | 2010-2018</p>
+    <!-- Place this tag where you want the +1 button to render -->
+    <p><g:plusone size="medium"></g:plusone></p>
+    </footer>
+  </div>
+  
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+  (w[c] = w[c] || []).push(function() {
+    try {
+      w.yaCounter14709598 = new Ya.Metrika({id:14709598, enableAll: true});
+    } catch(e) {}
+  });
+  
+  var n = d.getElementsByTagName("script")[0],
+    s = d.createElement("script"),
+    f = function () { n.parentNode.insertBefore(s, n); };
+  s.type = "text/javascript";
+  s.async = true;
+  s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+  if (w.opera == "[object Opera]") {
+    d.addEventListener("DOMContentLoaded", f);
+  } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/14709598" style="position:absolute; left:-9999px;" class="img-rounded" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js">
+  {lang: 'ru'}
+</script>
+
+</body>
+</html>
