@@ -1,246 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <title>Русский Информ</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <style>
-    body {
-      padding-top: 70px; /* 60px to make the container go all the way to the bottom of the topbar */
-      position: relative;
-    }
-    .featured-game {
-      /*border: 1px solid rgb(0, 109, 204);*/
-      background-color: rgba(255,196,13, 0.2);
-      /*border-radius: 4px;*/
-      /*box-shadow: 0 1px 3px rgba(0,0,0,0.055);*/
-    }
-  </style>
-  <script src="js/jquery-min.js" type="text/javascript"></script>
-  <script src="js/bootstrap.min.js" type="text/javascript"></script>
-  
-  <script type="text/javascript">
-  // $('#navbar').scrollspy({offset: 70});
-  // window.addEventListener("hashchange", function() { scrollBy(0, -70) })
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Платформа для создания текстовых игр с парсерным вводом">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap4.min.css">
+    <style>
+      body {
+        padding-top: 70px;
+        position: relative;
+      }
+      a {
+        color: #2578d2;
+      }
+    </style>
+    <!-- Bootstrap CSS -->
+    
 
-  $('body').scrollspy({ target: '#navbar' })
-  </script>
+    <title>Русский Информ</title>
+  </head>
 
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="60">
-  
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topnavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Русский Информ</a>
-      </div>
-      <div class="collapse navbar-collapse" id="topnavbar">
-        <ul class="nav navbar-nav">
-          <li><a href="#about">О проекте</a></li>
-          <li><a href="#games">Игры</a></li>
-          <li><a href="#develop">Разработчику</a></li>
-        </ul>
-        <ul class="nav navbar-nav">
-          <li><a href="http://rinform.ifiction.ru/"><strong>Блог</strong></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- <div data-spy="scroll" class="container"> -->
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Русский Информ</h1>
-      <p>Платформа для написания текстовых игр с парсерным вводом</p>
-    </div>
+  <body>
+    
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light border-bottom" role="navigation">
+        <div class="container">
+          <span class="navbar-brand mb-0 h1">Русский Информ</span>
+          <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
+            <li class="nav-item"><a class="nav-link" href="#games">Игры</a></li>
+            <li class="nav-item"><a class="nav-link" href="#develop">Авторам</a></li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-primary border-left" href="http://rinform.ifiction.ru/"><strong>Блог</strong></a></li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+    
 
-    <div class="row">
-      <div class="col-md-8">
-        <div class="page-header" id="about">
-          <h1>О проекте <small>Что это такое?</small></h1>
+    <div class="container">
+      <div class="jumbotron">
+        <div class="row align-items-center">
+          <div class="col-md-9 text-center">
+            <h1 class="display-4"><strong>Русский Информ</strong></h1>
+            <p class="lead">Платформа для создания текстовых игр с парсерным вводом</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <a class="btn btn-primary btn-lg" href="files/RInform-full.zip">Скачать v0.8.3</a><p class="text-center">(2018-02-04)</p>
+          </div>
         </div>
-        <p>Русский Информ (RInform) — это перевод стандартной библиотеки популярной на западе системы <a href="http://www.inform-fiction.org/inform6.html">Inform 6</a>.</p>
-      </div>
-      <div class="col-md-4">
-        <blockquote>
-        <p><strong>&gt; посмотреть на себя</strong><br>
-        Ты высокий человек в маске, закутанный в длинный красный плащ. Ты палач.</p>
-        </blockquote>
-      </div>
-    </div>
 
-    <div class="page-header" id="games">
-      <h1>Игры <small>Готовые творения на Информе</small></h1>
-    </div>
-    <p>Готовая игра на Информе — это скомпилированный платформонезависимый файл с расширением <code>.z5</code>, <code>.z8</code> или <code>.zblorb</code>. Чтобы запустить игру, нужно открыть её при помощи одной из программ-интерпретаторов, на выбор:</p>
-    <ul>
-      <li><a href="https://iplayif.com/">Parchment</a> — самый популярный вариант. Все игры можно запускать онлайн (HTML5).</li>
-      <li><a href="https://github.com/erkyrath/lectrote/releases">Lectrote</a> — Windows, Linux, OS X (использует Electron).</li>
-      <li><a href="http://www.davidkinder.co.uk/frotz.html">Windows Frotz</a> для Windows.</li>
-      <li><a href="https://fizmo.spellbreaker.org/">Fizmo</a> — Linux и OS X, поддерживает ncurses и SDL2.</li>
-      <li><a href="https://play.google.com/store/apps/details?id=com.luxlunae.fabularium">Fabularium</a> — Android.</li>
-    </ul>
-    <hr>
+      </div>
+    
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <div class="page-header" id="about">
+            <h1>О проекте <small class="text-muted">Что это такое?</small></h1>
+          </div>
+          <p>Русский Информ (RInform) — это перевод стандартной библиотеки популярной на западе системы <a href="http://www.inform-fiction.org/inform6.html">Inform 6</a>.</p>
+        </div>
+        <div class="col-md-4">
+          <blockquote>
+          <p><strong>&gt; посмотреть на себя</strong><br>
+          Ты высокий человек в маске, закутанный в длинный красный плащ. Ты палач.</p>
+          </blockquote>
+        </div>
+      </div>
+      <hr>
 
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/winter/winter.html"><img src="games/winter/winter.jpg" class="img-rounded" alt="" width="120px"></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/winter/winter.html"><u>Винтер</u></a> <small>(2017)</small></h4>
-            <p>Текстовая игра на конкурс КРИЛ&nbsp;'17.<br>
-              Автор: Юрий Павленко (goraph).
-            </p>
+      <div class="page-header" id="games">
+        <h1>Игры <small class="text-muted">Готовые творения на Информе</small></h1>
+      </div>
+      <p>Готовая игра на Информе — это скомпилированный платформонезависимый файл с расширением <code>.z5</code>, <code>.z8</code> или <code>.zblorb</code>. Чтобы запустить игру, нужно открыть её при помощи одной из программ-интерпретаторов, на выбор:</p>
+      <ul>
+        <li><a href="https://iplayif.com/">Parchment</a> — самый популярный вариант. Все игры можно запускать онлайн (HTML5).</li>
+        <li><a href="https://github.com/erkyrath/lectrote/releases">Lectrote</a> — Windows, Linux, OS X (использует Electron).</li>
+        <li><a href="http://www.davidkinder.co.uk/frotz.html">Windows Frotz</a> для Windows.</li>
+        <li><a href="https://fizmo.spellbreaker.org/">Fizmo</a> — Linux и OS X, поддерживает ncurses и SDL2.</li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.luxlunae.fabularium">Fabularium</a> — Android.</li>
+      </ul>
+      <hr>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/winter/winter.html"><img src="games/winter/winter.jpg" class="img-rounded" alt="" width="120px"></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/winter/winter.html"><u>Винтер</u></a> <small>(2017)</small></h4>
+              <p>Текстовая игра на конкурс КРИЛ&nbsp;'17.<br>
+                Автор: Юрий Павленко (goraph).
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/photopia/photopia.html"><img src="games/photopia/photopia.jpg" class="img-rounded" alt="" width="120px"></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/photopia/photopia.html"><u>Фотопия</u></a> <small>(2013)</small></h4>
+              <p>Перевод <em>Photopia</em> (1998).<br>
+                Автор перевода: Вячеслав Добранов.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/kniga/kniga.html"><img src="games/kniga/kniga.jpg" class="img-rounded" alt=""></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/kniga/kniga.html"><u>Книга судьбы</u></a> <small>(2012)</small></h4>
+              <p>Текстовая игра на конкурс ЗОК&nbsp;'12.<br>
+                Автор: Вета.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/bluechairs/bluechairs.html"><img src="games/bluechairs/bluechairs.jpg" class="img-rounded" alt=""></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/bluechairs/bluechairs.html"><u>Синие стулья</u></a> <small>(2011)</small></h4>
+              <p>Перевод <em>Blue Chairs</em> (2004).<br>
+                Автор перевода: Вячеслав Добранов.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/photopia/photopia.html"><img src="games/photopia/photopia.jpg" class="img-rounded" alt="" width="120px"></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/photopia/photopia.html"><u>Фотопия</u></a> <small>(2013)</small></h4>
-            <p>Перевод <em>Photopia</em> (1998).<br>
-              Автор перевода: Вячеслав Добранов.
-            </p>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/crossworlds/crossworlds.html"><img src="games/crossworlds/crossworlds.jpg" class="img-rounded" alt="" width="120px"></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/crossworlds/crossworlds.html"><u>Перекрёсток миров</u></a> <small>(2011)</small></h4>
+              <p>Игра за один день на конкурс «Вжж-8!»<br>Антон Артамонов (Apollo) и Всеволод Зубарев (y4n).</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/kniga/kniga.html"><img src="games/kniga/kniga.jpg" class="img-rounded" alt=""></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/kniga/kniga.html"><u>Книга судьбы</u></a> <small>(2012)</small></h4>
-            <p>Текстовая игра на конкурс ЗОК '12.<br>
-              Автор: Вета.
-            </p>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/morning/morning.html"><img src="games/morning/morning.jpg" class="img-rounded" alt=""></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/morning/morning.html"><u>Субботнее утро</u></a> <small>(2010)</small></h4>
+              <p>Фанфик по фильмам Джорджа Ромеро.<br>Автор: Сетке.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/bluechairs/bluechairs.html"><img src="games/bluechairs/bluechairs.jpg" class="img-rounded" alt=""></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/bluechairs/bluechairs.html"><u>Синие стулья</u></a> <small>(2011)</small></h4>
-            <p>Перевод <em>Blue Chairs</em> (2004).<br>
-              Автор перевода: Вячеслав Добранов.
-            </p>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/vespers/vespers.html"><img src="games/vespers/vespers.jpg" class="img-rounded" alt=""></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/vespers/vespers.html"><u>Вечерня</u></a> <small>(2010)</small></h4>
+              <p>Перевод <em>Vespers</em> (2005).<br>Автор перевода: Александр Мосьпан.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- <hr> -->
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/crossworlds/crossworlds.html"><img src="games/crossworlds/crossworlds.jpg" class="img-rounded" alt="" width="120px"></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/crossworlds/crossworlds.html"><u>Перекрёсток миров</u></a> <small>(2011)</small></h4>
-            <p>Игра за один день на конкурс «Вжж-8!»<br>Антон Артамонов (Apollo) и Всеволод Зубарев (y4n).</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/morning/morning.html"><img src="games/morning/morning.jpg" class="img-rounded" alt=""></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/morning/morning.html"><u>Субботнее утро</u></a> <small>(2010)</small></h4>
-            <p>Фанфик по фильмам Джорджа Ромеро.<br>Автор: Сетке.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/vespers/vespers.html"><img src="games/vespers/vespers.jpg" class="img-rounded" alt=""></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/vespers/vespers.html"><u>Вечерня</u></a> <small>(2010)</small></h4>
-            <p>Перевод <em>Vespers</em> (2005).<br>Автор перевода: Александр Мосьпан.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
+        <div class="col-sm-3">
         <div class="thumbnail">
           <p class="text-center"><a href="games/roboto/roboto.html"><img src="games/roboto/roboto.jpg" class="img-rounded" alt=""></a></p>
           <div class="caption">
-            <h3 class="text-center"><a href="games/roboto/roboto.html"><u>Робото</u></a> <small>(2010)</small></h4>
+            <h4 class="text-center"><a href="games/roboto/roboto.html"><u>Робото</u></a> <small>(2010)</small></h4>
             <p>Игра, написанная за один день на конкурс «Вжж!»<br>Автор: Всеволод Зубарев.</p>
           </div>
         </div>
-      </div>
-      
-    </div>
-    <!-- <hr> -->
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/SpiderAndWeb/SpiderAndWeb.html"><img src="games/SpiderAndWeb/spiderandweb.jpg" class="img-rounded" alt=""></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/SpiderAndWeb/SpiderAndWeb.html"><u>Spider and Web</u></a> <small> (2009)</small></h4>
-            <p>Перевод одноимённой игры (1998).<br>
-              Автор перевода: Всеволод Зубарев.
-            </p>
-          </div>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/Metamorphoses/metamorphoses.html"><img src="games/Metamorphoses/metamorphoses.jpg" class="img-rounded" alt=""></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/Metamorphoses/metamorphoses.html"><u>Метаморфозы</u></a> <small> (2008)</small></h4>
-            <p>Перевод <em>Metamorphoses</em> (2000).<br>
-              Автор перевода: Всеволод Зубарев.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/AllRoads/allroads.html"><img src="games/AllRoads/allroads.jpg" class="img-rounded" alt=""></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/AllRoads/allroads.html"><u>Все пути</u></a> <small> (2007)</small></h4>
-            <p>Перевод <em>All Roads</em> (2001).<br>
-              Автор перевода: Всеволод Зубарев.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <p class="text-center"><a href="games/Adventure/Adventure.html"><img src="games/Adventure/adventure.jpg" width="120px" height="120px" class="img-rounded" alt=""></a></p>
-          <div class="caption">
-            <h3 class="text-center"><a href="games/Adventure/Adventure.html"><u>Приключение</u></a> <small> (2004)</small></h4>
-            <p>Перевод <em>Adventure</em> (1976).<br>
-              Автор перевода: Денис Гаев.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
 
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/SpiderAndWeb/SpiderAndWeb.html"><img src="games/SpiderAndWeb/spiderandweb.jpg" class="img-rounded" alt=""></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/SpiderAndWeb/SpiderAndWeb.html"><u>Spider and Web</u></a> <small> (2009)</small></h4>
+              <p>Перевод одноимённой игры (1998).<br>
+                Автор перевода: Всеволод Зубарев.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/Metamorphoses/metamorphoses.html"><img src="games/Metamorphoses/metamorphoses.jpg" class="img-rounded" alt=""></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/Metamorphoses/metamorphoses.html"><u>Метаморфозы</u></a> <small> (2008)</small></h4>
+              <p>Перевод <em>Metamorphoses</em> (2000).<br>
+                Автор перевода: Всеволод Зубарев.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/AllRoads/allroads.html"><img src="games/AllRoads/allroads.jpg" class="img-rounded" alt=""></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/AllRoads/allroads.html"><u>Все пути</u></a> <small> (2007)</small></h4>
+              <p>Перевод <em>All Roads</em> (2001).<br>
+                Автор перевода: Всеволод Зубарев.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <p class="text-center"><a href="games/Adventure/Adventure.html"><img src="games/Adventure/adventure.jpg" width="120px" height="120px" class="img-rounded" alt=""></a></p>
+            <div class="caption">
+              <h4 class="text-center"><a href="games/Adventure/Adventure.html"><u>Приключение</u></a> <small> (2004)</small></h4>
+              <p>Перевод <em>Adventure</em> (1976).<br>
+                Автор перевода: Денис Гаев.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <hr>
     <div class="page-header" id="develop">
-      <h1>Разработчику <small>Документация, компилятор и утилиты</small></h1>
+      <h1>Авторам <small class="text-muted">Документация, компилятор и утилиты</small></h1>
     </div>
     <h2>Библиотека</h2>
-    <p>Для разработки можно скачать <a href="files/RInform-full.zip">рекомендуемую сборку</a> версии <strong>v0.8.3</strong> (обновлена <strong>04 февраля 2018</strong>), которая включает в себя компилятор (под Windows), библиотеку, демонстрационные игры и имеющуюся документацию.</p>
+    <p>Для разработки игр рекомендуется скачать <a href="files/RInform-full.zip">сборку</a> версии <strong>v0.8.3</strong> (обновлена <strong>04 февраля 2018</strong>), которая включает в себя компилятор (под Windows), библиотеку, демонстрационные игры и имеющуюся документацию.</p>
     <p>Самая свежая версия библиотеки всегда доступна на репозитарии на BitBucket: <a href="https://bitbucket.org/yandexx/rinform" >https://bitbucket.org/yandexx/rinform</a>. Патчи и баг-репорты сильно приветствуются.</p>
     <p>Компиляторы для других операционных систем есть на <a href="http://www.ifarchive.org/indexes/if-archiveXinfocomXcompilersXinform6Xexecutables.html">IF Archive</a>. Компилятор можно собрать самостоятельно из исходников c <a href="https://github.com/DavidKinder/Inform6">GitHub</a> (чистый си).
 
     <h2>Документация</h2>
-    <h3>На русском языке</h3>
-    <ul>
-      <li><a href="tutor/">Введение в Информ</a> — рекомендуется для новичков. Перевод <em>The Inform Beginner's Guide</em> с учётом особенностей русской версии платформы (готова 1 игра из 3).</li>
-    </ul>
-    <h3>На английском языке</h3>
-    <ul>
-      <li><a href="docs/IBG.pdf">The Inform Beginner's Guide</a> — рекомендуется для новичков.</li>
-      <li><a href="docs/DM4.pdf">The Inform Designer's Manual</a> — строгая и полная инструкция от автора платформы.</li>
-    </ul>
+    
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>На русском языке</h3>
+        <ul>
+          <li><a href="tutor/">Введение в Информ</a> — рекомендуется для новичков. Перевод <em>The Inform Beginner's Guide</em> с учётом особенностей русской версии платформы (готова 1 игра из 3).</li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <h3>На английском языке</h3>
+        <ul>
+          <li><a href="docs/IBG.pdf">The Inform Beginner's Guide</a> — рекомендуется для новичков.</li>
+          <li><a href="docs/DM4.pdf">The Inform Designer's Manual</a> — строгая и полная инструкция от автора платформы.</li>
+        </ul>
+      </div>
+    </div>
     
     <h2>Обратная связь</h2>
     <p>Быструю помощь можно получить на канале <strong>#rinform</strong> в чате Discord: <a href="https://discord.gg/MdT2ZnQ">https://discord.gg/MdT2ZnQ</a>.</p>
@@ -251,38 +252,36 @@
     <hr>
     <footer class="footer">
     <p>Всеволод Зубарев (yandexx, y4n), Ugo, cheshire | 2010-2018</p>
-    <!-- Place this tag where you want the +1 button to render -->
-    <p><g:plusone size="medium"></g:plusone></p>
     </footer>
-  </div>
-  
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function (d, w, c) {
-  (w[c] = w[c] || []).push(function() {
-    try {
-      w.yaCounter14709598 = new Ya.Metrika({id:14709598, enableAll: true});
-    } catch(e) {}
-  });
-  
-  var n = d.getElementsByTagName("script")[0],
-    s = d.createElement("script"),
-    f = function () { n.parentNode.insertBefore(s, n); };
-  s.type = "text/javascript";
-  s.async = true;
-  s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
 
-  if (w.opera == "[object Opera]") {
-    d.addEventListener("DOMContentLoaded", f);
-  } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="//mc.yandex.ru/watch/14709598" style="position:absolute; left:-9999px;" class="img-rounded" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+    (function (d, w, c) {
+      (w[c] = w[c] || []).push(function() {
+        try {
+          w.yaCounter14709598 = new Ya.Metrika({id:14709598, enableAll: true});
+        } catch(e) {}
+      });
+      
+      var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
 
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js">
-  {lang: 'ru'}
-</script>
+      if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f);
+      } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/14709598" style="position:absolute; left:-9999px;" class="img-rounded" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 
-</body>
+    <script type="text/javascript" src="http://apis.google.com/js/plusone.js">
+      {lang: 'ru'}
+    </script>
+
+    </div>
+  </body>
 </html>
