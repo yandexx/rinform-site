@@ -22,15 +22,15 @@
   </head>
 
   <body>
-    
       <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light border-bottom" role="navigation">
         <div class="container">
-          <span class="navbar-brand mb-0 h1">Русский Информ</span>
+          <span class="navbar-brand mb-0 h1"><a href="/">Русский Информ</a></span>
           <div class="collapse navbar-collapse">
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
             <li class="nav-item"><a class="nav-link" href="#games">Игры</a></li>
             <li class="nav-item"><a class="nav-link" href="#develop">Авторам</a></li>
+            <li class="nav-item"><a class="nav-link" href="/faq/"><strong>FAQ</strong></a></li>
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link text-primary border-left" href="http://rinform.ifiction.ru/"><strong>Блог</strong></a></li>
@@ -49,6 +49,7 @@
           </div>
           <div class="col-md-3 text-center">
             <a class="btn btn-primary btn-lg" href="files/RInform-full.zip">Скачать v0.8.3</a><p class="text-center">(2018-02-04)</p>
+            <a class="btn btn-secondary" href="https://github.com/yandexx/rinform-glulx/releases/tag/v0.9.0-beta">Скачать бету v0.9.0 (Glulx)</a><p class="text-center">(2018-02-13)</p>
           </div>
         </div>
 
@@ -60,6 +61,7 @@
             <h1>О проекте <small class="text-muted">Что это такое?</small></h1>
           </div>
           <p>Русский Информ (RInform) — это перевод стандартной библиотеки популярной на западе системы <a href="http://www.inform-fiction.org/inform6.html">Inform 6</a>.</p>
+          <p>Информ позволяет писать игры с текстовым вводом. Классические примеры таких игр — Adventure и Zork.</p>
         </div>
         <div class="col-md-4">
           <blockquote>
@@ -218,10 +220,11 @@
 
     <hr>
     <div class="page-header" id="develop">
-      <h1>Авторам <small class="text-muted">Документация, компилятор и утилиты</small></h1>
+      <h1>Авторам</h1>
     </div>
     <h2>Библиотека</h2>
     <p>Для разработки игр рекомендуется скачать <a href="files/RInform-full.zip">сборку</a> версии <strong>v0.8.3</strong> (обновлена <strong>04 февраля 2018</strong>), которая включает в себя компилятор (под Windows), библиотеку, демонстрационные игры и имеющуюся документацию.</p>
+    <p>Особенности русской версии, которые нужно учесть при написании игр, перечислены в <a href="/faq/">FAQ</a>.</p>
     <p>Самая свежая версия библиотеки всегда доступна на репозитарии на BitBucket: <a href="https://bitbucket.org/yandexx/rinform" >https://bitbucket.org/yandexx/rinform</a>. Патчи и баг-репорты сильно приветствуются.</p>
     <p>Компиляторы для других операционных систем есть на <a href="http://www.ifarchive.org/indexes/if-archiveXinfocomXcompilersXinform6Xexecutables.html">IF Archive</a>. Компилятор можно собрать самостоятельно из исходников c <a href="https://github.com/DavidKinder/Inform6">GitHub</a> (чистый си).
 

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Платформа для создания текстовых игр с парсерным вводом">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+      body {
+        padding-top: 70px;
+        position: relative;
+      }
+      a {
+        color: #2578d2;
+      }
+    </style>
+    <!-- Bootstrap CSS -->
+    
+
+    <title>Русский Информ</title>
+  </head>
+
+  <body>
+    
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light border-bottom" role="navigation">
+        <div class="container">
+          <span class="navbar-brand mb-0 h1"><a href="/">Русский Информ</a></span>
+          <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
+            <li class="nav-item"><a class="nav-link" href="#games">Игры</a></li>
+            <li class="nav-item"><a class="nav-link" href="#develop">Авторам</a></li>
+            <li class="nav-item"><a class="nav-link" href="/faq/"><strong>FAQ</strong></a></li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-primary border-left" href="http://rinform.ifiction.ru/"><strong>Блог</strong></a></li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+    
+
+    <div class="container">
+<!--       <div class="jumbotron">
+        <div class="row align-items-center">
+          <div class="col-md-9 text-center">
+            <h1 class="display-4"><strong>Русский Информ</strong></h1>
+            <p class="lead">Платформа для создания текстовых игр с парсерным вводом</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <a class="btn btn-primary btn-lg" href="files/RInform-full.zip">Скачать v0.8.3</a><p class="text-center">(2018-02-04)</p>
+            <a class="btn btn-secondary" href="https://github.com/yandexx/rinform-glulx/releases/tag/v0.9.0-beta">Скачать бету v0.9.0 (Glulx)</a><p class="text-center">(2018-02-13)</p>
+          </div>
+        </div>
+
+      </div> -->
+    
+    <div class="row">
+      
+      <div class="col-md-12">
+        <h1 class="display-3 mb-5">FAQ — часто задаваемые вопросы</h1>
+
+        <h2><a id="___Inform_2"></a>Особенности русской версии Inform</h2>
+        <p>Для компиляции в Z-машину исходные файлы игры должны быть в кодировке Windows 1251. Пример командной строки для компиляции игры, где указаны все обязательные параметры:</p>
+        <pre><code>inform.exe +library +charset_map=library\cyrwin.cm +language_name=Russian -v5 game.inf game.z5
+        </code></pre>
+        <p>Для компиляции в Glulx исходники должны быть в UTF-8. Пример командной строки для компиляции игры:</p>
+        <pre><code>inform.exe +library +language_name=Russian -G -Cu $DICT_CHAR_SIZE=4 game.inf game.ulx
+        </code></pre>
+        <h3><a id="___16"></a>Как описывать объекты</h3>
+        <p>Нижеперечисленное относится только к объектам. На комнаты (локации) эти правила не распространяются.</p>
+        <ol>
+        <li>
+        <p>В имени объекта нужно отделить окончание (или окончания) прямым слешем (/), а точнее — те буквы, которые должны будут изменяться при склонении. Например: <strong>латунн/ая ламп/а</strong>, <strong>надпис/ь на стене</strong>, <strong>бел/ый туман/</strong>. Имя используется при выводе объектов во всевозможных ситуациях, в разных падежах.</p>
+        </li>
+        <li>
+        <p>В свойстве <code>name</code> указываются слова, по которым парсер находит объекты. В русской версии нужно перечислять такие слова без окончаний. Здесь нужно не забыть указать и синонимы, по которым объект тоже должен находиться парсером.</p>
+        </li>
+        <li>
+        <p>Каждому объекту (кроме комнат) обязательно нужно выдать один из атрибутов, соответствующий роду или числу объекта. Один из четырёх: <strong>male</strong> — мужской род, <strong>female</strong> — женский род, <strong>neuter</strong> — средний род, <strong>pluralname</strong> — множественное число.</p>
+        <p>Примеры:</p>
+        <pre><code>Object -&gt; &quot;друг/ой склон/ холма&quot;
+    with name 'склон' 'сторон' 'холм',
+    description &quot;Кто мешает изучить его самому?&quot;,
+    has  scenery male;
+        </code></pre>
+        <pre><code>Object -&gt; &quot;груб/ые каменн/ые ступен/и&quot;
+    with name 'груб' 'каменн' 'ступен',
+    description &quot;Грубые каменные ступени ведут по куполу вверх.&quot;,
+    has  scenery pluralname;
+        </code></pre>
+        </li>
+        <li>
+        <p>Особый случай — это существительные с беглыми гласными: ковёр (ковром), перекрёсток (перекрёстком) и так далее. Их нужно окружить двумя слешами, а к объекту добавить свойство <code>casegen</code>, по примеру ниже. Четвёртым параметром в функции <code>ICVowel</code> должна идти беглая гласная. Есть более сложные случаи, где новые буквы появляются (пятый параметр), см. пример ниже про «ручей».</p>
+        <pre><code>Object -&gt; &quot;туманн/ый колод/е/ц/&quot;
+    with name 'колодец' 'колодц',
+    casegen [ beg end csID;
+      return ICVowel (csID, beg, end, 'е', 0);
+    ],
+    description &quot;Из колодца поднимаются бесформенные клубы белого тумана.&quot;,
+    has scenery male;
+        </code></pre>
+        <pre><code>Treasure -&gt; large_gold_nugget &quot;огромн/ый золот/ой самород/о/к/&quot;
+    with name 'золот' 'огромн' 'слиток' 'слитк' 'самородок' 'самородк' 'кусок' 'куск',
+    description &quot;Массивный кусок самородного золота!&quot;,
+    casegen [ beg end csID;
+      return ICVowel (csID, beg, end, 'о', 0);
+    ],
+    initial &quot;На полу поблескивает большой золотой самородок!&quot;,
+    has male;
+        </code></pre>
+        <pre><code>Object Stream &quot;бурн/ый руч/е//й&quot;
+    with name 'руче' 'ручь' 'речк' 'поток' 'вод',
+    description &quot;Холодный бурный ручей струится вниз по каменистому руслу.&quot;,
+    casegen [ beg end csID;
+      return ICVowel (csID, beg, end, 'е', 'ь');
+    ],
+    has scenery male;
+        </code></pre>
+        </li>
+        <li>
+        <p>Есть случаи, когда нужно, чтобы у мужского объекта была женская логика для склонения имени. Например, мужское имя «Слава». В таком случае необходимо дополнительно выдать объекту атрибут <strong>fem_grammar</strong>.</p>
+        </li>
+        </ol>
+        <h3><a id="________77"></a>Как проверить, что объект верно склоняется по падежам?</h3>
+        <p>Для этого есть удобная команда <strong>мета! форм</strong>:</p>
+        <pre><code>&gt;мета! форм самородок
+Объект «огромн/ый золот/ой самород/о/к/» (Ед.ч./М.р.):
+
+И.п.: Огромный золотой самородок
+Р.п.: Огромного золотого самородка
+Д.п.: Огромному золотому самородку
+В.п.: Огромный золотой самородок
+Т.п.: Огромным золотым самородком
+П.п.: Огромном золотом самородке
+
+&gt;
+        </code></pre>
+        <h3><a id="____95"></a>Как описывать русские глаголы</h3>
+        <ol>
+        <li>
+        <p>Глаголы нужно перечислять по корневой части. Парсер распознает приставки («по», «за» и т.д.) и суффиксы-окончания («ся», «ять», «ать» и т.д.) автоматически.</p>
+        </li>
+        <li>
+        <p>Нужно учесть и то, что глаголы могут вводиться и в повелительном наклонении: например, не только «взять» (вз), но и «возьми» (возьм). Это необходимо для приказов, которые игрок может отдавать NPC: «гоблин, отдай мне ключ».</p>
+        </li>
+        <li>
+        <p>Для существительных, с которыми оперирует глагол, нужно указывать токены. Какой токен использовать, определяет падеж существительного в данном контексте. Например, «взять ключ» — винительный падеж (Accusative), «дотронуться до двери» — дверь в родительном падеже (Genitive).</p>
+        <p>Есть следующие токены:
+        <ul>
+          <li><code>cNom_noun</code> — именительный (Nominative).</li>
+          <li><code>cAcc_noun</code> — винительный (Accusative).</li>
+          <li><code>cGen_noun</code> — родительный (Genitive).</li>
+          <li><code>cDat_noun</code> — дательный (Dative).</li>
+          <li><code>cIns_noun</code> — творительный (Instrumental).</li>
+          <li><code>cPre_noun</code> — предложный (Prepositive).</li>
+        </ul></p>
+        <p>Кроме этого, можно использовать более строгие токены, соответствующие категориям объектов:
+        <ul>
+        <li><code>cIns_held</code>, <code>cAcc_held</code>, <code>cGen_held</code> — для объектов, которые есть в инвентаре игрока (у которых есть атрибут held).</li>
+        <li><code>cAcc_creat</code>, <code>cGen_creat</code>, <code>cDat_creat</code> — для живых объектов (NPC с атрибутом animate).</li>
+        <li><code>cAcc_multi</code> — для группы объектов (например, команда «взять» позволяет брать более одного объекта).</li>
+        <li><code>cAcc_multiheld</code>, <code>cAcc_multiexcept</code>, <code>cAcc_multiinside</code>.</li>
+        </ul>
+        </p>
+        </li>
+        <li>
+        <p>Также, не обязательно, но рекомендуется добавить объект с этими корневыми частями в VerbDepot, как указано в примере ниже. В нём нужно указать полную форму глагола, которая иногда выводится парсером.</p>
+        <pre><code>! &quot;вязать&quot;
+Verb 'вяз' 'вяж'
+    * cAcc_noun         -&gt; Tie
+    * cAcc_noun 'к' cDat_noun   -&gt; Tie      ! &quot;привязать&quot;
+    * 'к' cDat_noun cAcc_noun   -&gt; Tie reverse
+    * cAcc_noun 'с'/'со' cIns_noun  -&gt; Tie      ! &quot;связать&quot;
+    * 'с'/'со' cIns_noun cAcc_noun  -&gt; Tie reverse;
+
+Object &quot;вязать&quot; VerbDepot
+    with name 'вяз' 'вяж';
+        </code></pre>
+        </li>
+        </ol>
+
+
+      </div>
+    </div>
+
+    <hr>
+    <footer class="footer">
+    <p>Всеволод Зубарев (yandexx, y4n), Ugo, cheshire | 2010-2018</p>
+    </footer>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+    (function (d, w, c) {
+      (w[c] = w[c] || []).push(function() {
+        try {
+          w.yaCounter14709598 = new Ya.Metrika({id:14709598, enableAll: true});
+        } catch(e) {}
+      });
+      
+      var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+      if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f);
+      } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/14709598" style="position:absolute; left:-9999px;" class="img-rounded" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <script type="text/javascript" src="http://apis.google.com/js/plusone.js">
+      {lang: 'ru'}
+    </script>
+
+    </div>
+  </body>
+</html>
