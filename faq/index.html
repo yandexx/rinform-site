@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <style>
       body {
-        padding-top: 70px;
+        /*padding-top: 70px;*/
         position: relative;
       }
       a {
@@ -18,19 +18,19 @@
     <!-- Bootstrap CSS -->
     
 
-    <title>Русский Информ</title>
+    <title>Русский Информ — FAQ</title>
   </head>
 
   <body>
     
-      <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light border-bottom" role="navigation">
-        <div class="container">
+<nav class="navbar navbar-expand navbar-light bg-light border-bottom mb-2" role="navigation">
+        <div class="container flex-column flex-sm-row">
           <span class="navbar-brand mb-0 h1"><a href="/">Русский Информ</a></span>
           <div class="collapse navbar-collapse">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
-            <li class="nav-item"><a class="nav-link" href="#games">Игры</a></li>
-            <li class="nav-item"><a class="nav-link" href="#develop">Авторам</a></li>
+          <ul class="navbar-nav flex-sm-row flex-column">
+            <li class="nav-item"><a class="nav-link" href="/#about">О проекте</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#games">Игры</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#develop">Авторам</a></li>
             <li class="nav-item"><a class="nav-link" href="/faq/"><strong>FAQ</strong></a></li>
           </ul>
           <ul class="navbar-nav">
@@ -42,19 +42,6 @@
     
 
     <div class="container">
-<!--       <div class="jumbotron">
-        <div class="row align-items-center">
-          <div class="col-md-9 text-center">
-            <h1 class="display-4"><strong>Русский Информ</strong></h1>
-            <p class="lead">Платформа для создания текстовых игр с парсерным вводом</p>
-          </div>
-          <div class="col-md-3 text-center">
-            <a class="btn btn-primary btn-lg" href="files/RInform-full.zip">Скачать v0.8.3</a><p class="text-center">(2018-02-04)</p>
-            <a class="btn btn-secondary" href="https://github.com/yandexx/rinform-glulx/releases/tag/v0.9.0-beta">Скачать бету v0.9.0 (Glulx)</a><p class="text-center">(2018-02-13)</p>
-          </div>
-        </div>
-
-      </div> -->
     
     <div class="row">
       
@@ -63,11 +50,9 @@
 
         <h2><a id="___Inform_2"></a>Особенности русской версии Inform</h2>
         <p>Для компиляции в Z-машину исходные файлы игры должны быть в кодировке Windows 1251. Пример командной строки для компиляции игры, где указаны все обязательные параметры:</p>
-        <pre><code>inform.exe +library +charset_map=library\cyrwin.cm +language_name=Russian -v5 game.inf game.z5
-        </code></pre>
+        <pre><code>inform.exe +library +charset_map=library\cyrwin.cm +language_name=Russian -v5 game.inf game.z5</code></pre>
         <p>Для компиляции в Glulx исходники должны быть в UTF-8. Пример командной строки для компиляции игры:</p>
-        <pre><code>inform.exe +library +language_name=Russian -G -Cu $DICT_CHAR_SIZE=4 game.inf game.ulx
-        </code></pre>
+        <pre><code>inform.exe +library +language_name=Russian -G -Cu $DICT_CHAR_SIZE=4 game.inf game.ulx</code></pre>
         <h3><a id="___16"></a>Как описывать объекты</h3>
         <p>Нижеперечисленное относится только к объектам. На комнаты (локации) эти правила не распространяются.</p>
         <ol>
@@ -83,13 +68,11 @@
         <pre><code>Object -&gt; &quot;друг/ой склон/ холма&quot;
     with name 'склон' 'сторон' 'холм',
     description &quot;Кто мешает изучить его самому?&quot;,
-    has  scenery male;
-        </code></pre>
+    has  scenery male;</code></pre>
         <pre><code>Object -&gt; &quot;груб/ые каменн/ые ступен/и&quot;
     with name 'груб' 'каменн' 'ступен',
     description &quot;Грубые каменные ступени ведут по куполу вверх.&quot;,
-    has  scenery pluralname;
-        </code></pre>
+    has  scenery pluralname;</code></pre>
         </li>
         <li>
         <p>Особый случай — это существительные с беглыми гласными: ковёр (ковром), перекрёсток (перекрёстком) и так далее. Их нужно окружить двумя слешами, а к объекту добавить свойство <code>casegen</code>, по примеру ниже. Четвёртым параметром в функции <code>ICVowel</code> должна идти беглая гласная. Есть более сложные случаи, где новые буквы появляются (пятый параметр), см. пример ниже про «ручей».</p>
@@ -99,8 +82,7 @@
       return ICVowel (csID, beg, end, 'е', 0);
     ],
     description &quot;Из колодца поднимаются бесформенные клубы белого тумана.&quot;,
-    has scenery male;
-        </code></pre>
+    has scenery male;</code></pre>
         <pre><code>Treasure -&gt; large_gold_nugget &quot;огромн/ый золот/ой самород/о/к/&quot;
     with name 'золот' 'огромн' 'слиток' 'слитк' 'самородок' 'самородк' 'кусок' 'куск',
     description &quot;Массивный кусок самородного золота!&quot;,
@@ -108,35 +90,33 @@
       return ICVowel (csID, beg, end, 'о', 0);
     ],
     initial &quot;На полу поблескивает большой золотой самородок!&quot;,
-    has male;
-        </code></pre>
+    has male;</code></pre>
         <pre><code>Object Stream &quot;бурн/ый руч/е//й&quot;
     with name 'руче' 'ручь' 'речк' 'поток' 'вод',
     description &quot;Холодный бурный ручей струится вниз по каменистому руслу.&quot;,
     casegen [ beg end csID;
       return ICVowel (csID, beg, end, 'е', 'ь');
     ],
-    has scenery male;
-        </code></pre>
+    has scenery male;</code></pre>
         </li>
         <li>
         <p>Есть случаи, когда нужно, чтобы у мужского объекта была женская логика для склонения имени. Например, мужское имя «Слава». В таком случае необходимо дополнительно выдать объекту атрибут <strong>fem_grammar</strong>.</p>
         </li>
         </ol>
         <h3><a id="________77"></a>Как проверить, что объект верно склоняется по падежам?</h3>
-        <p>Для этого есть удобная команда <strong>мета! форм</strong>:</p>
-        <pre><code>&gt;мета! форм самородок
-Объект «огромн/ый золот/ой самород/о/к/» (Ед.ч./М.р.):
-
-И.п.: Огромный золотой самородок
-Р.п.: Огромного золотого самородка
-Д.п.: Огромному золотому самородку
-В.п.: Огромный золотой самородок
-Т.п.: Огромным золотым самородком
-П.п.: Огромном золотом самородке
-
-&gt;
-        </code></pre>
+        <p>Для этого есть удобная команда <strong>мета! форм</strong>. Чтобы она работала, удостоверьтесь, что игра скомпилирована в режиме Debug (с флагом -D).</p>
+        <p class="bg-light">&gt;<strong>мета! форм самородок</strong><br>
+Объект «огромн/ый золот/ой самород/о/к/» (<strong>Ед.ч./М.р.</strong>):<br>
+<br>
+<strong>И.п.</strong>: Огромный золотой самородок<br>
+<strong>Р.п.</strong>: Огромного золотого самородка<br>
+<strong>Д.п.</strong>: Огромному золотому самородку<br>
+<strong>В.п.</strong>: Огромный золотой самородок<br>
+<strong>Т.п.</strong>: Огромным золотым самородком<br>
+<strong>П.п.</strong>: Огромном золотом самородке<br>
+<br>
+&gt;<br>
+        </p>
         <h3><a id="____95"></a>Как описывать русские глаголы</h3>
         <ol>
         <li>
@@ -176,8 +156,7 @@ Verb 'вяз' 'вяж'
     * 'с'/'со' cIns_noun cAcc_noun  -&gt; Tie reverse;
 
 Object &quot;вязать&quot; VerbDepot
-    with name 'вяз' 'вяж';
-        </code></pre>
+    with name 'вяз' 'вяж';</code></pre>
         </li>
         </ol>
 
