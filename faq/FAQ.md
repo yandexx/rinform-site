@@ -83,13 +83,13 @@ inform.exe +library +language_name=Russian -G -Cu $DICT_CHAR_SIZE=4 game.inf gam
       description "Твой любимый ключ на тридцать два.",
       casegen [ beg end csID;
         switch (csID) {
-				csNom: print "ключ"; rtrue;
-				csGen: print "ключа"; rtrue;
-				csDat: print "ключу"; rtrue;
-				csAcc: print "ключ"; rtrue;
-				csIns: print "ключом"; rtrue;
-				csPre: print "ключе"; rtrue;
-			}
+          csNom: print "ключ"; rtrue;
+          csGen: print "ключа"; rtrue;
+          csDat: print "ключу"; rtrue;
+          csAcc: print "ключ"; rtrue;
+          csIns: print "ключом"; rtrue;
+          csPre: print "ключе"; rtrue;
+        }
       ],
       has male;
     ```
