@@ -236,11 +236,11 @@ print_ret "Вам нет нужды беспокоиться о ", (cPre) self, 
     ```
     ! "вязать"
     Verb    'вяз' 'вяж'
-                    * cAcc_noun         -> Tie
-                    * cAcc_noun 'к' cDat_noun   -> Tie      ! "привязать"
-                    * 'к' cDat_noun cAcc_noun   -> Tie reverse
-                    * cAcc_noun 'с'/'со' cIns_noun  -> Tie      ! "связать"
-                    * 'с'/'со' cIns_noun cAcc_noun  -> Tie reverse;
+        * cAcc_noun         -> Tie
+        * cAcc_noun 'к' cDat_noun   -> Tie      ! "привязать"
+        * 'к' cDat_noun cAcc_noun   -> Tie reverse
+        * cAcc_noun 'с'/'со' cIns_noun  -> Tie      ! "связать"
+        * 'с'/'со' cIns_noun cAcc_noun  -> Tie reverse;
 
     Object "вязать" VerbDepot
         with name 'вяз' 'вяж';
