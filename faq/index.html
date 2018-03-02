@@ -47,14 +47,47 @@
       
       <div class="col-md-12">
 <h1><a id="FAQ_0"></a>FAQ</h1>
-<h2><a id="___Inform_2"></a>Особенности русской версии Inform</h2>
+<h2><a id="____Zmachine__Glulx_2"></a>В чём разница между Z-machine и Glulx?</h2>
+<p>Это два формата файлов, в которые можно компилировать игры на Информе. Более старая, классическая Z-machine поддерживает размер файла игры до 256 Кб (формат .z5) или 512 Кб (формат .z8) и 16 цветов. Glulx — более современная 32-битная система, поддерживающая файлы размером до 4 Гб и расширенные мультимедийные возможности. Компилятор <strong>inform</strong> умеет компилировать игры в любом из форматов.</p>
+<p>В английской версии Информа библиотека единая, но в русской версии пришлось разнести её на два отдельных проекта.</p>
+<ul>
+<li>Z-machine: <a href="https://bitbucket.org/yandexx/rinform/">https://bitbucket.org/yandexx/rinform/</a></li>
+<li>Glulx: <a href="https://github.com/yandexx/rinform-glulx">https://github.com/yandexx/rinform-glulx</a></li>
+</ul>
+<p><em>На данный момент Glulx находится в стадии беты и рекомендуется для авторов, уже имевших опыт с Информом.</em></p>
+<p>Glulx имеет следующие фичи:</p>
+<ul>
+<li>мультимедиа-фичи: картинки, звук, ссылки.</li>
+<li>расширенные возможности типографики.</li>
+<li>возможность разделять окно на произвольные области.</li>
+<li>полная поддержка UTF-8 как в исходниках, так и в готовых играх.</li>
+<li>файлы игр до 4 гигабайт.</li>
+</ul>
+<p>Известное ограничение: в онлайн-версии Glulx (Quixe) нельзя в коде игры задавать цвета или размер шрифтов, кроме глобальных настроек через .css.</p>
+<h2><a id="______23"></a>Какие плееры открывают игры на Информе?</h2>
+<ul>
+<li>Z-machine (файлы <strong>.z5</strong>, <strong>.z8</strong> и <strong>.zblorb</strong>): <a href="http://www.davidkinder.co.uk/frotz.html">Windows Frotz</a>, <a href="https://github.com/erkyrath/lectrote">Lectrote</a>, <a href="https://fizmo.spellbreaker.org/">fizmo</a>, а также онлайн через <a href="https://iplayif.com/">Parchment</a>.</li>
+<li>Glulx (файлы <strong>.ulx</strong> и <strong>.gblorb</strong>): <a href="http://www.davidkinder.co.uk/glulxe.html">Windows Git</a>, <a href="http://www.davidkinder.co.uk/glulxe.html">Windows Glulxe</a>, <a href="https://github.com/erkyrath/lectrote">Lectrote</a>, а также онлайн.</li>
+<li>На Android плеер <a href="https://play.google.com/store/apps/details?id=com.luxlunae.fabularium">Fabularium</a> поддерживает все существующие форматы.</li>
+</ul>
+<h2><a id="____29"></a>Как опубликовать игру онлайн?</h2>
+<p>Чтобы запустить произвольную игру в Parchment, нужно указать параметром для сайта <strong><a href="http://iplayif.com">iplayif.com</a></strong> путь к файлу игры, уже залитому на какой-нибудь сервер. Например: <a href="https://iplayif.com/?story=http://rinform.stormway.ru/games/photopia/PhotopiaR.z8">https://iplayif.com/?story=http://rinform.stormway.ru/games/photopia/PhotopiaR.z8</a></p>
+<p>Очень просто и разместить игру на своём собственном сайте, даже статическом, т.к. Parchment работает полностью на клиентском JavaScript. Достаточно <a href="https://github.com/curiousdannii/parchment">скачать</a> и разместить у себя на сервере файлы:</p>
+<ul>
+<li>index.html,</li>
+<li>lib/parchment.min.js,</li>
+<li>lib/parchment.min.css,</li>
+<li>lib/jquery.min.js</li>
+</ul>
+<p>и отредактировать index.html. В .css файле можно поменять шрифты, цвета и прочее, на что хватит вашей фантазии. Несколько примеров: <a href="http://pavlenko.biz/winter/">Винтер</a>, <a href="http://eblong.com/zarf/zweb/wallpaper/">Delightful Wallpaper</a>, <a href="http://eblong.com/zarf/zweb/dreamhold/">Dreamhold</a>.</p>
+<h2><a id="___Inform_42"></a>Особенности русской версии Inform</h2>
 <p>Для компиляции в Z-машину исходные файлы игры должны быть в кодировке Windows 1251. Пример командной строки для компиляции игры, где указаны все обязательные параметры:</p>
 <pre><code>inform.exe +library +charset_map=library\cyrwin.cm +language_name=Russian -v5 game.inf game.z5
 </code></pre>
 <p>Для компиляции в Glulx исходники должны быть в UTF-8. Пример командной строки для компиляции игры:</p>
 <pre><code>inform.exe +library +language_name=Russian -G -Cu $DICT_CHAR_SIZE=4 game.inf game.ulx
 </code></pre>
-<h3><a id="___16"></a>Как описывать объекты</h3>
+<h3><a id="___56"></a>Как описывать объекты</h3>
 <p>Нижеперечисленное относится только к объектам. На комнаты (локации) эти правила не распространяются.</p>
 <ol>
 <li>
@@ -110,7 +143,7 @@
 </li>
 <li>
 <p>Если возникает случай, где парсер не в состоянии самостоятельно просклонять имя объекта (на вывод), необходимо указать свойство-функцию <code>casegen</code> и через неё явно указать все нужные склонения. Кроме того, необходимо изменить имя объекта. Например:</p>
-<pre><code>Object Key &quot;/неважно что здесь будет написано&quot;
+<pre><code>Object Key &quot;/неважно_что_здесь_будет_написано_главное_без_пробелов&quot;
   with name 'ключ',
   description &quot;Твой любимый ключ на тридцать два.&quot;,
   casegen [ beg end csID;
@@ -135,7 +168,7 @@
 </code></pre>
 </li>
 </ol>
-<h3><a id="________105"></a>Как проверить, что объект верно склоняется по падежам?</h3>
+<h3><a id="________145"></a>Как проверить, что объект верно склоняется по падежам?</h3>
 <p>Для этого есть удобная команда <strong>мета! форм</strong>. Чтобы она работала, убедитесь, что игра скомпилирована в режиме Debug (-D).</p>
 <pre><code>&gt;мета! форм самородок
 Объект «огромн/ый золот/ой самород/о/к/» (Ед.ч./М.р.):
@@ -149,7 +182,7 @@
 
 &gt;
 </code></pre>
-<h3><a id="______123"></a>Как вывести объект в каком-либо падеже</h3>
+<h3><a id="______163"></a>Как вывести объект в каком-либо падеже</h3>
 <p>Для этого есть следующие функции. Вторая функция нужна для вывода с большой буквы (обычно, в начале предложений).</p>
 <ul>
 <li><code>cNom</code> и <code>ССNom</code> — именительный (Nominative).</li>
@@ -171,7 +204,7 @@
     print_ret (CCNom) noun, &quot; не замечает этого.&quot;;
 ];
 </code></pre>
-<h3><a id="__152"></a>Вспомогательные функции</h3>
+<h3><a id="__192"></a>Вспомогательные функции</h3>
 <p>Все эти функции принимают объект, и вызывать их в коде нужно как <code>(function) noun</code>.</p>
 <ul>
 <li><code>PronounS</code> выводит местоимение, подходящее объекту («ты», «он», «она», «оно», «они»).</li>
@@ -194,7 +227,7 @@
 <li><code>InsIt</code>: им, ей, ими</li>
 <li><code>InsIt2</code>: ним, ней, ними.</li>
 </ul>
-<h3><a id="____176"></a>Как описывать русские глаголы</h3>
+<h3><a id="____216"></a>Как описывать русские глаголы</h3>
 <ol>
 <li>
 <p>Глаголы нужно перечислять по корневой части. Парсер распознает приставки («по», «за» и т.д.) и суффиксы-окончания («ся», «ять», «ать» и т.д.) автоматически.</p>
@@ -225,11 +258,11 @@
 <p>Также, не обязательно, но рекомендуется добавить объект с этими корневыми частями в VerbDepot, как указано в примере ниже. В нём нужно указать полную форму глагола, которая иногда выводится в игре.</p>
 <pre><code>! &quot;вязать&quot;
 Verb    'вяз' 'вяж'
-                * cAcc_noun         -&gt; Tie
-                * cAcc_noun 'к' cDat_noun   -&gt; Tie      ! &quot;привязать&quot;
-                * 'к' cDat_noun cAcc_noun   -&gt; Tie reverse
-                * cAcc_noun 'с'/'со' cIns_noun  -&gt; Tie      ! &quot;связать&quot;
-                * 'с'/'со' cIns_noun cAcc_noun  -&gt; Tie reverse;
+    * cAcc_noun         -&gt; Tie
+    * cAcc_noun 'к' cDat_noun   -&gt; Tie      ! &quot;привязать&quot;
+    * 'к' cDat_noun cAcc_noun   -&gt; Tie reverse
+    * cAcc_noun 'с'/'со' cIns_noun  -&gt; Tie      ! &quot;связать&quot;
+    * 'с'/'со' cIns_noun cAcc_noun  -&gt; Tie reverse;
 
 Object &quot;вязать&quot; VerbDepot
     with name 'вяз' 'вяж';
