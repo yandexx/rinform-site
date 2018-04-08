@@ -71,7 +71,7 @@
 <li>На Android плеер <a href="https://play.google.com/store/apps/details?id=com.luxlunae.fabularium">Fabularium</a> поддерживает все существующие форматы.</li>
 </ul>
 <h2><a id="____29"></a>Как опубликовать игру онлайн?</h2>
-<p>Чтобы запустить произвольную игру в Parchment, нужно указать параметром для сайта <strong><a href="http://iplayif.com">iplayif.com</a></strong> путь к файлу игры, уже залитому на какой-нибудь сервер. Например: <a href="https://iplayif.com/?story=http://rinform.stormway.ru/games/photopia/PhotopiaR.z8">https://iplayif.com/?story=http://rinform.stormway.ru/games/photopia/PhotopiaR.z8</a></p>
+<p>Чтобы запустить произвольную игру в Parchment, нужно указать параметром для сайта <strong><a href="http://iplayif.com">iplayif.com</a></strong> путь к файлу игры, уже залитому на какой-нибудь сервер. Например: <a href="https://iplayif.com/?story=https://rinform.org/games/photopia/PhotopiaR.z8">https://iplayif.com/?story=https://rinform.org/games/photopia/PhotopiaR.z8</a></p>
 <p>Очень просто и разместить игру на своём собственном сайте, даже статическом, т.к. Parchment работает полностью на клиентском JavaScript. Достаточно <a href="https://github.com/curiousdannii/parchment">скачать</a> и разместить у себя на сервере файлы:</p>
 <ul>
 <li>index.html,</li>
@@ -161,7 +161,7 @@
 </code></pre>
 </li>
 <li>
-<p>Если парсер не распознаёт объект автоматически (на ввод), то следует пользоваться свойством-функцией <code>parse_name</code>. Подробное описание находится в <a href="http://rinform.stormway.ru/docs/DM4.pdf"><strong>DM4</strong></a> (pdf) на странице 209. В простом примере ниже имя персонажа «Моро» не склоняется.</p>
+<p>Если парсер не распознаёт объект автоматически (на ввод), то следует пользоваться свойством-функцией <code>parse_name</code>. Подробное описание находится в <a href="https://rinform.org/docs/DM4.pdf"><strong>DM4</strong></a> (pdf) на странице 209. В простом примере ниже имя персонажа «Моро» не склоняется.</p>
 <pre><code>parse_name [n;
     while (NextWord() == 'моро') n++;
     return n;
