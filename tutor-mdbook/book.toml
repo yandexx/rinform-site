@@ -1,0 +1,8 @@
+[book]
+authors = ["Vsevolod Zubarev"]
+multilingual = false
+src = "src"
+title = "Введение в Русский Информ"
+
+[output.html.search]
+enable = false
