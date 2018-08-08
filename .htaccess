@@ -3,4 +3,17 @@ RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Protocol} !=https
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301]
 
-RewriteRule "^games/$" / [R,L]
+RewriteRule "^games/$" / [R]
+
+RewriteRule "^games/adventure/adventure\.html$" /games/adventure/ [R]
+RewriteRule "^games/AllRoads/allroads\.html$" /games/AllRoads/ [R]
+RewriteRule "^games/bluechairs/bluechairs\.html$" /games/bluechairs/ [R]
+RewriteRule "^games/crossworlds/crossworlds\.html$" /games/crossworlds/ [R]
+RewriteRule "^games/kniga/kniga\.html$" /games/kniga/ [R]
+RewriteRule "^games/metamorphoses/metamorphoses\.html$" /games/metamorphoses/ [R]
+RewriteRule "^games/morning/morning\.html$" /games/morning/ [R]
+RewriteRule "^games/photopia/photopia\.html$" /games/photopia/ [R]
+RewriteRule "^games/roboto/roboto\.html$" /games/roboto/ [R]
+RewriteRule "^games/SpiderAndWeb/SpiderAndWeb\.html$" /games/SpiderAndWeb/ [R]
+RewriteRule "^games/vespers/vespers\.html$" /games/vespers/ [R]
+RewriteRule "^games/winter/winter\.html$" /games/winter/ [R]
