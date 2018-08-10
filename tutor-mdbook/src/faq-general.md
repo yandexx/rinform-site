@@ -33,10 +33,14 @@ Glulx имеет следующие преимущества:
 
 Очень просто и разместить игру на своём собственном сайте, даже статическом, т.к. Parchment работает полностью на клиентском JavaScript. Достаточно [скачать](https://github.com/curiousdannii/parchment) и разместить у себя на сервере файлы: 
 
-* index.html,
-* lib/parchment.min.js,
-* lib/parchment.min.css,
+* index.html
+* lib/glkote.min.css
+* lib/glkote.min.js
+* lib/gnusto.min.js
 * lib/jquery.min.js
+* lib/parchment.min.js
+* lib/parchment.min.css
+* lib/quixe.min.js
 * lib/zvm.min.js
 
 и отредактировать index.html. В .css файле можно поменять шрифты, цвета и прочее, на что хватит вашей фантазии. Несколько примеров: [Винтер](http://pavlenko.biz/winter/), [Delightful Wallpaper](http://eblong.com/zarf/zweb/wallpaper/), [Dreamhold](http://eblong.com/zarf/zweb/dreamhold/).
