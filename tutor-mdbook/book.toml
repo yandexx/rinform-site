@@ -3,6 +3,7 @@ authors = ["Vsevolod Zubarev"]
 multilingual = false
 src = "src"
 title = "Введение в Русский Информ"
+description = "Учебник и справка по Русскому Информу."
 
 [output.html.search]
 enable = false

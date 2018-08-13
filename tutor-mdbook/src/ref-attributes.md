@@ -1,125 +1,169 @@
 # Список атрибутов
 
+Ниже идёт список всех атрибутов из стандартной библиотеки. Атрибут — это то же самое, что флаг; у каждого объекта атрибут либо выставлен, либо убран.
+
+Можно создавать свои атрибуты:
+
+```
+Attibute hungry;
+```
+
+Чтобы проверить, включен ли атрибут у объекта:
+
+```
+if (vasilisa has hungry) {
+    ...
+}
+```
+```
+if (vasilisa hasnt hungry) {
+    ...
+}
+```
+
+Атрибуты даются при задании объектов:
+```
+Object Vasilisa "Василиса"
+...
+has animate female ~hungry;
+```
+
+Флаг можно выставить в процессе игры:
+
+```
+give vasilisa hungry;
+```
+
+Или убрать:
+
+```
+give vasilisa ~hungry;
+```
+
+## Стандартные атрибуты
+
 * **absent**
   
-  For a floating object (one with a found_in property, which can appear in many rooms): is no longer there.
+  Для объекта в нескольких комнатах (со свойством `found_in`) обозначает отсутствие объекта.
 
 * **animate**
 
-  For an object: is a living creature.
+  Обозначает одушевлённый объект — NPC, животное и т.д.
 
 * **clothing**
 
-  For an object: can be worn.
+  Обозначает объект, который можно надеть на себя.
 
 * **concealed**
 
-  For an object: is present but hidden from view.
+  Обозначает объект, скрытый из виду, но присутствующий в комнате.
 
 * **container**
 
-  For an object: other objects can be put in (but not on) it.
+  Обозначает, что в объект (но не на объект) можно класть другие объекты.
 
 * **door**
 
-  For an object: is a door or bridge between rooms.
+  Обозначает, что объект является дверью (или мостом и т.п.).
 
 * **edible**
 
-  For an object: can be eaten.
+  Обозначает съедобный объект.
 
 * **enterable**
 
-  For an object: can be entered.
+  Обозначает объект, в который можно зайти.
 
 * **female**
 
-  For an animate object: is female.
+  Обозначает, что для объекта будет использоваться грамматика женского рода.
 
 * **general**
   
-  For an object or room: a general-purpose flag.
+  Флаг общего назначения для объекта или комнаты. Его можно использовать для любых удобных целей.
 
 * **light**
 
-  For an object or room: is giving off light.
+  Обозначает, что комната или объект излучают свет. У всех комнат должен быть этот атрибут, иначе там будет темно без другого источника света.
 
 * **lockable**
 
-  For an object: can be locked; see the with_key property.
+  Обозначает, что объект можно запереть «на ключ»; ключ указывается в свойстве `with_key`.
 
 * **locked**
 
-  For an object: can’t be opened.
+  Обозначает, что объект заперт, и просто так его открыть не получится.
 
 * **male**
 
-  For an animate object: is male.
+  Обозначает, что для объекта будет использоваться грамматика мужского рода.
 
 * **moved**
 
-  For an object: is being, or has been, taken by the player.
+  Обозначает, что объект был взят, передвинут игроком (или сейчас находится у игрока).
 
 * **neuter**
 
-  For an animate object: is neither male nor female.
+  Обозначает, что для объекта будет использоваться грамматика среднего рода.
 
 * **on**
 
-  For a switchable object: is switched on.
+  Для объекта, который можно включить или выключить, обозначает включённое состояние.
 
 * **open**
 
-  For a container or door object: is open.
+  Обозначает, что контейнер или дверь открыты.
 
 * **openable**
 
-  For a container or door object: can be opened.
+  Обозначает, что контейнер или дверь можно открывать и закрывать.
 
 * **pluralname**
 
-  For an object: is plural.
+  Обозначает, что для объекта будет использоваться грамматика множественного числа.
 
 * **proper**
 
-  For an object: the short name is a proper noun, therefore not to be preceded by “The” or “the”.
+  В русской версии не используется. В английской обозначает вывод объекта без «the».
 
 * **scenery**
 
-  For an object: can’t be taken; is not listed in a room description.
+  Объект с этим атрибутом нельзя подобрать, и он не выводится в описании комнаты.
 
 * **scored**
 
-  For an object: awards OBJECT_SCORE points when taken for the first time. For a room: awards ROOM_SCORE points when visited for the first time.
+  Если впервые подобрать объект с этим атрибутом, игрок зарабатывает `OBJECT_SCORE` очков. Если впервые зайти в комнату с этим атрибутом, игрок зарабатывает `ROOM_SCORE` очков.
 
 * **static**
 
-  For an object: can’t be taken.
+  Объект с этим атрибутом нельзя подобрать.
 
 * **supporter**
 
-  For an object: other objects can be put on (but not in) it.
+  Обозначает, что на объект (но не в объект) можно класть другие объекты.
 
 * **switchable**
 
-  For an object: can be switched off or on.
+  Обозначает, что объект можно включить или выключить.
 
 * **talkable**
 
-  For an object: can be addressed in “object, do this” style.
+  Обозначает объект, которому можно давать команды в стиле «объект, сделай что-то». Нужен в тех случаях, где не подходит `animate` — например, для микрофона.
 
 * **transparent**
 
-  For a container object: objects inside it are visible.
+  Обозначает, что объекты внутри данного контейнера будут видны снаружи.
 
 * **visited**
 
-  For a room: is being, or has been, visited by the player.
+  Означает, что комната была посещена игроком ранее, или игрок находится в ней сейчас.
 
 * **workflag**
 
-  Temporary internal flag, also available to the program.
+  Временный флаг, используемый библиотекой. Используется редко.
 
 * **worn**
 
-  For a clothing object: is being worn.
+  Для предмета одежды означает, что он сейчас надет.
+
+Для комнат (локаций) имеют смысл только `light`, `scored` и `visited`.
