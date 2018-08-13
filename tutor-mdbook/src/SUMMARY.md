@@ -8,6 +8,7 @@
   - [И снова Хейди](./ch-02-03-heidi-final.md)
 - [Пример игры: Вильгельм Телль](./ch-03-wtell.md)
 - [Справочник](./ref.md)
+  - [Список свойств](./ref-properties.md)
   - [Список атрибутов](./ref-attributes.md)
 - [FAQ](./faq.md)
   - [Общие вопросы](./faq-general.md)
