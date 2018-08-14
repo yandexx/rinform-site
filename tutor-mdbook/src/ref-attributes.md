@@ -23,7 +23,7 @@ if (vasilisa hasnt hungry) {
 
 Атрибуты даются при задании объектов:
 ```
-Object Vasilisa "Василиса"
+Object Vasilisa "Василис/а"
 ...
 has animate female ~hungry;
 ```
