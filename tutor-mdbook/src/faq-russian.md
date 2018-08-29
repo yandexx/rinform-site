@@ -124,12 +124,12 @@ inform.exe +library +charset_map=library\cyrwin.cm +language_name=Russian -v5 ga
 
 Для этого есть следующие функции. Вторая функция нужна для вывода с большой буквы (обычно, в начале предложений).
 
-* `cNom` и `ССNom` — именительный (Nominative).
-* `cAcc` и `ССAcc` — винительный (Accusative).
-* `cGen` и `ССGen` — родительный (Genitive).
-* `cDat` и `ССDat` — дательный (Dative).
-* `cIns` и `ССIns` — творительный (Instrumental).
-* `cPre` и `ССPre` — предложный (Prepositive).
+* `cNom` и `CCNom` — именительный (Nominative).
+* `cAcc` и `CCAcc` — винительный (Accusative).
+* `cGen` и `CCGen` — родительный (Genitive).
+* `cDat` и `CCDat` — дательный (Dative).
+* `cIns` и `CCIns` — творительный (Instrumental).
+* `cPre` и `CCPre` — предложный (Prepositive).
 
 ```
 "Вы тщательно установили неуклюжую монстроподобную фотокамеру,
