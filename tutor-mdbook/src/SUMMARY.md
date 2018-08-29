@@ -10,6 +10,7 @@
 - [Справочник](./ref.md)
   - [Список свойств](./ref-properties.md)
   - [Список атрибутов](./ref-attributes.md)
+  - [Список действий](./ref-actions.md)
 - [FAQ](./faq.md)
   - [Общие вопросы](./faq-general.md)
   - [Особенности русской версии](./faq-russian.md)
