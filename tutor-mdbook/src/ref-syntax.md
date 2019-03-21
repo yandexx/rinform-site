@@ -330,7 +330,7 @@ while (<em>выражение</em>)<br>
 > <tt>
 do<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<em>блок_инструкций</em><br>
-while (<em>выражение</em>)
+until (<em>выражение</em>)
 </tt>
 
 Цикл со счётчиком:
