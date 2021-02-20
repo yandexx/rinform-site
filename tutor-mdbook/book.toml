@@ -7,3 +7,6 @@ description = "Учебник и справка по Русскому Инфор
 
 [output.html.search]
 enable = false
+
+[output.linkcheck]
+follow-web-links = false

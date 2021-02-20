@@ -10,7 +10,7 @@
 Библиотеку и компилятор можно [скачать](https://rinform.org/) с сайта Информа. В архиве помимо прочего есть примеры игр.
 
 Игры можно запускать онлайн, и это самый популярный вариант, но на время разработки обычно пользуются одним из «оффлайн»-плееров:
-* [Gargoyle](https://github.com/garglk/garglk) — кроссплатформенный плеер, ориентированный на типографику. Поддерживает все форматы. [Скачать для Windows](/files/gargoyle-2018.1-windows.exe)
+* [Gargoyle](https://github.com/garglk/garglk) — кроссплатформенный плеер, ориентированный на типографику. Поддерживает все форматы. [Скачать для Windows](https://rinform.org/files/gargoyle-2018.1-windows.exe)
 * [Lectrote](https://github.com/erkyrath/lectrote/releases) — Windows, Linux, OS X (использует Electron).
 * [Windows Glulxe](http://www.davidkinder.co.uk/glulxe.html) для Windows. Там же есть более быстрый Windows Git.
 

@@ -43,4 +43,4 @@ Glulx имеет следующие преимущества:
 * lib/quixe.min.js
 * lib/zvm.min.js
 
-и отредактировать index.html. В .css файле можно поменять шрифты, цвета и прочее, на что хватит вашей фантазии. Несколько примеров: [Винтер](http://pavlenko.biz/winter/), [Delightful Wallpaper](http://eblong.com/zarf/zweb/wallpaper/), [Dreamhold](http://eblong.com/zarf/zweb/dreamhold/).
+и отредактировать index.html. В .css файле можно поменять шрифты, цвета и прочее, на что хватит вашей фантазии. Несколько примеров: [Винтер](https://rinform.org/games/winter/online/), [Delightful Wallpaper](http://eblong.com/zarf/zweb/wallpaper/), [Dreamhold](http://eblong.com/zarf/zweb/dreamhold/).
