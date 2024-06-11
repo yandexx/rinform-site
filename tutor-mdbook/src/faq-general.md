@@ -7,7 +7,7 @@
 В английской версии Информа библиотека единая, но в русской версии пришлось разнести её на два отдельных проекта.
 
 * Glulx: <https://github.com/yandexx/rinform-glulx>
-* Z-machine: <https://bitbucket.org/yandexx/rinform/>
+* Z-machine: <https://github.com/yandexx/rinform-zcode>
 
 Начиная с версии **0.9** Русского Информа Glulx считается стабильной и рекомендуемой версией. Разработку стоит вести под неё. Версия для Z-машины считается вторичной.
 
