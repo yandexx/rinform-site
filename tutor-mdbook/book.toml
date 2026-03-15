@@ -1,12 +1,12 @@
 [book]
 authors = ["Vsevolod Zubarev"]
-multilingual = false
 src = "src"
 title = "Введение в Русский Информ"
 description = "Учебник и справка по Русскому Информу."
+language = "ru"
 
 [output.html.search]
 enable = false
 
-[output.linkcheck]
+[output.linkcheck2]
 follow-web-links = false
