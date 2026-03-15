@@ -23,18 +23,21 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand bg-light border-bottom mb-2" role="navigation">
-        <div class="container flex-column flex-sm-row">
+      <nav class="navbar navbar-expand-md bg-light border-bottom mb-2" role="navigation">
+        <div class="container">
           <span class="navbar-brand mb-0 h1"><a href="/">Русский Информ</a></span>
-          <div class="collapse navbar-collapse">
-          <ul class="navbar-nav flex-sm-row flex-column">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Навигация">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
             <li class="nav-item"><a class="nav-link" href="#games">Игры</a></li>
             <li class="nav-item"><a class="nav-link" href="#develop">Авторам</a></li>
             <li class="nav-item"><a class="nav-link" href="tutor/">Документация</a></li>
             <li class="nav-item"><a class="nav-link" href="tutor/faq.html"><strong>FAQ</strong></a></li>
           </ul>
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link text-primary border-start" href="https://rinform.ifiction.ru/" target="_blank"><strong>Блог</strong></a></li>
           </ul>
           </div>
@@ -50,8 +53,10 @@
             <p class="lead">Платформа для создания текстовых игр с парсерным вводом</p>
           </div>
           <div class="col-md-3 text-center">
-            <a class="btn btn-primary btn-lg" href="files/RInform-Glulx-0.9.0.zip">Скачать v0.9.0 (Glulx)</a><p class="text-center">(рекомендуемая версия; 2018-08-09)</p>
-            <a class="btn btn-secondary btn-sm" href="files/RInform-Zcode-0.9.0.zip">Скачать v0.9.0 (Z-code)</a><p class="text-center">(2018-08-09)</p>
+            <a class="btn btn-primary btn-lg" href="files/RInform-Glulx-0.9.0.zip">Скачать v0.9.0 (Glulx)</a>
+            <small class="d-block text-muted">(рекомендуемая версия; 2018-08-09)</small>
+            <a class="btn btn-secondary btn-sm mt-2" href="files/RInform-Zcode-0.9.0.zip">Скачать v0.9.0 (Z-code)</a>
+            <small class="d-block text-muted">(2018-08-09)</small>
           </div>
         </div>
 
@@ -65,8 +70,8 @@
           <p>На Информе можно писать игры с текстовым вводом. Классические примеры таких игр — Adventure и Zork. Здесь на сайте можно поиграть в такие игры на русском языке, а кроме этого скачать инструменты для разработки своих собственных игр.</p>
           <p>Русский Информ (RInform) — это перевод стандартной библиотеки популярной на западе системы <a href="http://www.inform-fiction.org/inform6.html">Inform 6</a>.</p>
         </div>
-        <div class="col-md-4">
-          <blockquote>
+        <div class="col-md-4 border-start">
+          <blockquote class="blockquote">
           <p><strong>&gt; посмотреть на себя</strong><br>
           Ты высокий человек в маске, закутанный в длинный красный плащ. Ты палач.</p>
           </blockquote>
@@ -340,7 +345,7 @@
 
 
     <hr>
-    <footer class="footer">
+    <footer class="footer text-muted text-center py-3">
     <p>Всеволод Зубарев (yandexx, y4n), Ugo, cheshire | 2010-2026</p>
     </footer>
 
